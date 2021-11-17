@@ -1,21 +1,18 @@
 <?php
         include ('connexion.php');
 
-        $requete = "SELECT * FROM `utilisateurs` WHERE login = '".$_GET["user_login"]."'";
+        $requete = "SELECT * FROM `utilisateurs` WHERE login = '".$_GET["id"]."'";
         $stmt=$db -> query($requete);
         $utilisateurs = $stmt -> fetch(PDO::FETCH_ASSOC);
 
         if ($stmt->rowcount ()==1){
-        if ($_GET["mot_de_passe"]==$utilisateurs["mot_de_passe"]){       
+        if ($_GET["mdp"]==$utilisateurs["mdp"]){       
         echo 
             "<h1> Informations de l'utilisateur </h1>
             <p> 
             Nom : ".$utilisateurs["nom"]." <br>
-            Prénom : ".$utilisateurs["prenom"]." <br>
-            Ville : ".$utilisateurs["ville"]." <br>
             Login : ".$utilisateurs["login"]." <br>
             Mot de passe : ".$utilisateurs["mot_de_passe"]." <br>
-            Ville : ".$utilisateurs["ville"]." <br><br>
             </p";
         } else {
         $_SESSION = array ();

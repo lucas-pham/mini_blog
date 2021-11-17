@@ -18,12 +18,8 @@
         foreach ($utilisateurs as $utilisateurs){
             echo "<p>
             ".$utilisateurs["nom"]."
-            ".$utilisateurs["prenom"]." <br>
-            ".$utilisateurs["ville"]." <br>
             ".$utilisateurs["login"]." <br>
-            ".$utilisateurs["mot_de_passe"]." <br>
-            ".$utilisateurs["ville"]." <br><br>
-            
+            ".$utilisateurs["mdp"]." <br>
             </p";
         }
         ?>
