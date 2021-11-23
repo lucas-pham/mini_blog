@@ -8,8 +8,10 @@
 </head>
 <body>
     <?php
-        $link = new PDO('mysql:host=sqletud.u-pem.fr;dbname=lucas.pham_db', 'lucas.pham', '77Boreyangkor', array
-        (PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8"));
+$db = new PDO('mysql:host=localhost;dbname=mini_blog', 'root') or die;
+
+        // $link = new PDO('mysql:host=sqletud.u-pem.fr;dbname=lucas.pham_db', 'lucas.pham', '77Boreyangkor', array
+        // (PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8"));
         
     ?>
 </body>
