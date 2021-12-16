@@ -7,8 +7,7 @@
 
 <body>
     <main action="accueil.php" method="GET">
-    <form action="commentaires.php" method="GET">
-        <h1>Accueil </h1>
+    <h1>Commentaires </h1>
         <?php
         include ('connexion.php');
         $requete = "SELECT * FROM billlets";
@@ -22,10 +21,24 @@
             <p>
             Date : ".$billlets["date"]." <br>
             Contenu : ".$billlets["contenu"]." <br>
-            </p>
-            <input type='submit' value='Voir les commentaires'>"
+            </p>"
             ;
         }
+
+        $requete = "SELECT * FROM commentaires";
+
+        $stmt = $db -> query($requete);
+        $commentaires = $stmt -> fetchAll(PDO::FETCH_ASSOC);
+        
+        foreach ($commentaires as $commentaires){
+            echo "
+            <p>
+            ".$commentaires["contenu"]." <br>
+            ".$commentaires["date"]."
+            </p>"
+            ;
+        }
+
         ?>
 
     </main>
