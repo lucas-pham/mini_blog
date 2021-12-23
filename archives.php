@@ -3,29 +3,16 @@
 <head>
     <meta charset="utf-8">
     <link rel="stylesheet" href="./pure-release-1.0.0/pure-min.css">
-
+    <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
     <main action="accueil.php" method="POST">
-    <h1>Commentaires </h1>
+    <h1>Archives </h1>
+    <div class="center box">
+    <h2>Tous les commentaires</h2>
         <?php
         include ('connexion.php');
-        $requete = "SELECT * FROM miniblogbilllets";
-
-        $stmt = $db -> query($requete);
-        $billlets = $stmt -> fetchAll(PDO::FETCH_ASSOC);
-        
-        foreach ($billlets as $billlets){
-            echo "
-            <h3>".$billlets["titre"]." </h3>
-            <p>
-            Date : ".$billlets["date"]." <br>
-            Contenu : ".$billlets["contenu"]." <br>
-            </p>"
-            ;
-        }
-
         $requete = "SELECT * FROM miniblogcommentaires";
 
         $stmt = $db -> query($requete);
@@ -41,7 +28,7 @@
         }
 
         ?>
-
+</div>
     </main>
 
 </body>

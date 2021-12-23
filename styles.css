@@ -1,0 +1,37 @@
+*, *::after, *::before {
+    box-sizing: border-box;
+}
+
+
+h1 {
+    text-align: center;
+}
+
+h2 {
+    text-align: center;
+}
+
+.align {
+    display: flex; 
+}
+
+.center {
+    /* border : 1px solid blue; */
+    margin : 0 auto;
+    width: 500px;
+    text-align: center;
+}
+
+.boutons {
+    justify-content:space-around;
+}
+
+.box {
+    border : 1px solid blue;
+    border-radius : 20px;
+    padding : 20px;
+}
+
+.ticket {
+    margin: 20px;
+}
